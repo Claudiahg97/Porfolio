@@ -194,19 +194,19 @@ function inicio() {
     contenido.appendChild(nombre);
 
     // Foto circular pequeña integrada
-    const fotoContainer = document.createElement("div");
-    fotoContainer.className = "inline-block relative mb-8";
+    // const fotoContainer = document.createElement("div");
+    // fotoContainer.className = "inline-block relative mb-8";
 
-    const foto = document.createElement("img");
-    foto.src = "img/yo.jpg";
-    foto.className = "w-32 h-32 rounded-full object-cover border-4 border-amber-500 shadow-xl shadow-amber-500/50";
-    fotoContainer.appendChild(foto);
+    // const foto = document.createElement("img");
+    // foto.src = "img/yo.jpg";
+    // foto.className = "w-32 h-32 rounded-full object-cover border-4 border-amber-500 shadow-xl shadow-amber-500/50";
+    // fotoContainer.appendChild(foto);
 
-    const statusDot = document.createElement("div");
-    statusDot.className = "absolute bottom-2 right-2 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse";
-    fotoContainer.appendChild(statusDot);
+    // const statusDot = document.createElement("div");
+    // statusDot.className = "absolute bottom-2 right-2 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse";
+    // fotoContainer.appendChild(statusDot);
 
-    contenido.appendChild(fotoContainer);
+    // contenido.appendChild(fotoContainer);
 
     // Subtítulo
     const subtitulo = document.createElement("p");
