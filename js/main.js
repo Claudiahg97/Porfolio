@@ -160,6 +160,19 @@ function inicio() {
         particula.style.animationDelay = `${Math.random() * 5}s`;
         contenedorInicio.appendChild(particula);
     }
+    
+    for (let i = 0; i < 20; i++) {
+        const particula = document.createElement("div");
+        particula.className = "absolute rounded-full bg-amber-400/10";
+        const size = Math.random() * 100 + 50;
+        particula.style.width = `${size}px`;
+        particula.style.height = `${size}px`;
+        particula.style.left = `${Math.random() * 100}%`;
+        particula.style.top = `${Math.random() * 100}%`;
+        particula.style.animation = `float ${Math.random() * 10 + 10}s ease-in-out infinite`;
+        particula.style.animationDelay = `${Math.random() * 5}s`;
+        contenedorInicio.appendChild(particula);
+    }
 
     // Contenedor central
     const contenido = document.createElement("div");
