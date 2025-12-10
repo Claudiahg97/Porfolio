@@ -136,6 +136,10 @@ export const misDatos = {
             imagen: "../img/linux.png"
         },
         {
+            nombre: "PowerShell",
+            imagen: "../img/powershell.png"
+        },
+        {
             nombre: "Laravel",
             imagen: "../img/laravel.webp"
         },
@@ -153,8 +157,29 @@ export const misDatos = {
             nombre: "Portfolio Personal",
             descripcion: "Un portafolio personal desarrollado para mostrar mis capacidades.",
             tecnologias: ["HTML", "CSS", "JavaScript", "Tailwind"],
-            link: "#",
-            imagen: ""
+            link: "https://github.com/Claudiahg97/Porfolio.git",
+            imagen: "../img/porfolio.png"
+        },
+        {
+            nombre: "Biblioteca Online",
+            descripcion: "Una web donde los usuarios registrados registran libros y votan por sus favoritos.",
+            tecnologias: ["HTML", "CSS", "PHP", "SQL"],
+            link: "https://github.com/Claudiahg97/Biblioteca-Online-AJAX.git",
+            imagen: "../img/biblioteca.png"
+        },
+        {
+            nombre: "Tienda de Alimentación ",
+            descripcion: "Un web sobre una tienda de alimentación para practicar CSS.",
+            tecnologias: ["HTML", "CSS"],
+            link: "https://github.com/Claudiahg97/RepasoCSS.git",
+            imagen: "../img/alimentacion.png"
+        },
+        {
+            nombre: "Panel de Control",
+            descripcion: "Un panel de control sobre una tienda de ropa para practicar el uso de Bootstrap.",
+            tecnologias: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+            link: "https://github.com/Claudiahg97/Panel-de-Control.git",
+            imagen: "../img/panel.png"
         }
     ]
 };

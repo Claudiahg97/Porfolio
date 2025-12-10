@@ -55,10 +55,10 @@ function generarNav() {
     const menuItems = [
         { texto: "Inicio", archivo: "index.html" },
         { texto: "Sobre mi", archivo: "html/sobre-mi.html" },
-        { texto: "Conocimientos", archivo: "conocimientos.html" },
-        { texto: "Proyectos", archivo: "proyectos.html" },
-        { texto: "Curriculum Vitae", archivo: "curriculum-vitae.html" },
-        { texto: "Contacto", archivo: "contacto.html" }
+        { texto: "Conocimientos", archivo: "html/conocimientos.html" },
+        { texto: "Proyectos", archivo: "html/proyectos.html" },
+        { texto: "Curriculum Vitae", archivo: "html/curriculum-vitae.html" },
+        { texto: "Contacto", archivo: "html/contacto.html" }
     ];
 
     menuItems.forEach((item, index) => {
@@ -179,7 +179,7 @@ function inicio() {
     const nombreSpan = document.createElement("span");
     nombreSpan.textContent = "Claudia";
     nombreSpan.className = "text-white block";
-    nombreSpan.style.textShadow = "0 0 80px rgba(251, 191, 36, 0.5)";
+    nombreSpan.style.textShadow = "0 0 80px #fbbf2480";
     nombre.appendChild(nombreSpan);
 
     const apellidoSpan = document.createElement("span");
@@ -216,7 +216,7 @@ function inicio() {
 
     // CTA
     const cta = document.createElement("a");
-    cta.href = "proyectos.html";
+    cta.href = "html/proyectos.html";
     cta.className = "inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-amber-500/50 transform hover:scale-105 transition-all duration-300";
     cta.innerHTML = `
         Explorar Portfolio
