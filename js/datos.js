@@ -3,10 +3,12 @@ export const misDatos = {
         nombre: "Claudia",
         apellidos: "Hernández García",
         email: "claudia.hg.97@gmail.com",
+        telefono: "680 108 949",
         direccion: "Calle Pintor Cándido Camacho Gómez, nº 46",
         github: "https://github.com/Claudiahg97",
         imagen: "../img/perfil.jpg",
-        historia: "Soy una joven palmera apasionada por la creatividad en todas sus formas. Los libros han sido siempre una ventana a mundos infinitos para mí, y esa fascinación por las historias y los procesos creativos se extiende también al mundo digital. Me considero una persona organizada y responsable, con capacidad natural para liderar cuando es necesario, pero siempre valorando el trabajo en equipo. El compromiso y la sociabilidad son pilares importantes en mi forma de relacionarme con los demás y con los proyectos que emprendo. Tengo una sed constante de conocimiento. Me encanta aprender cosas nuevas y seguir formándome, lo que me mantiene en continuo crecimiento personal y profesional. Desde siempre he sentido una atracción especial por los ordenadores y las infinitas posibilidades creativas que ofrecen. Esta pasión me ha llevado a sumergirme en el mundo de la programación, y mi objetivo es seguir explorando y dominando diferentes lenguajes de programación para ampliar mis horizontes y capacidades. La combinación de mi amor por la creatividad, mi capacidad organizativa y mi interés por la tecnología define quién soy: alguien que busca conectar el arte de contar historias con el poder transformador de la programación."
+        historia: "Soy una joven palmera apasionada por la creatividad en todas sus formas. Los libros han sido siempre una ventana a mundos infinitos para mí, y esa fascinación por las historias y los procesos creativos se extiende también al mundo digital. Me considero una persona organizada y responsable, con capacidad natural para liderar cuando es necesario, pero siempre valorando el trabajo en equipo. El compromiso y la sociabilidad son pilares importantes en mi forma de relacionarme con los demás y con los proyectos que emprendo. Tengo una sed constante de conocimiento. Me encanta aprender cosas nuevas y seguir formándome, lo que me mantiene en continuo crecimiento personal y profesional. Desde siempre he sentido una atracción especial por los ordenadores y las infinitas posibilidades creativas que ofrecen. Esta pasión me ha llevado a sumergirme en el mundo de la programación, y mi objetivo es seguir explorando y dominando diferentes lenguajes de programación para ampliar mis horizontes y capacidades. La combinación de mi amor por la creatividad, mi capacidad organizativa y mi interés por la tecnología define quién soy: alguien que busca conectar el arte de contar historias con el poder transformador de la programación.",
+        descripcion: "Técnico Superior en Desarrollo de Aplicaciones Web y en administración de sistemas. Apasionada por la tecnología y el aprendizaje continuo."
     },
     estudios: [
         {
@@ -69,63 +71,78 @@ export const misDatos = {
     conocimientos: [
         {
             nombre: "HTML",
-            imagen: "../img/html.png"
+            imagen: "../img/html.png",
+            nivel: "Avanzado"
         },
         {
             nombre: "CSS",
-            imagen: "../img/css.png"
+            imagen: "../img/css.png",
+            nivel: "Avanzado"
         },
         {
             nombre: "JavaScript",
-            imagen: "../img/javascript.png"
+            imagen: "../img/javascript.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "TypeScript",
-            imagen: "../img/typescript.png"
+            imagen: "../img/typescript.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "XML",
-            imagen: "../img/xml.png"
+            imagen: "../img/xml.png",
+            nivel: "Básico"
         },
         {
             nombre: "JSON",
-            imagen: "../img/json.png"
+            imagen: "../img/json.png",
+            nivel: "Básico"
         },
         {
             nombre: "Java",
-            imagen: "../img/java.png"
+            imagen: "../img/java.png",
+            nivel: "Avanzado"
         },
         {
             nombre: "Phyton",
-            imagen: "../img/phyton.png"
+            imagen: "../img/phyton.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "PHP",
-            imagen: "../img/php.png"
+            imagen: "../img/php.png",
+            nivel: "Avanzado"
         },
         {
             nombre: "MySQL",
-            imagen: "../img/mysql.png"
+            imagen: "../img/mysql.png",
+            nivel: "Avanzado"
         },
         {
             nombre: "Git",
-            imagen: "../img/git.png"
+            imagen: "../img/git.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "GitHub",
-            imagen: "../img/github.png"
+            imagen: "../img/github.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "Node.js",
-            imagen: "../img/nodejs.png"
+            imagen: "../img/nodejs.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "Tailwind CSS",
-            imagen: "../img/tailwind.png"
+            imagen: "../img/tailwind.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "Bootstrap",
-            imagen: "../img/bootstrap.png"
+            imagen: "../img/bootstrap.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "Docker",
@@ -133,23 +150,28 @@ export const misDatos = {
         },
         {
             nombre: "Linux",
-            imagen: "../img/linux.png"
+            imagen: "../img/linux.png",
+            nivel: "Avanzado"
         },
         {
             nombre: "PowerShell",
-            imagen: "../img/powershell.png"
+            imagen: "../img/powershell.png",
+            nivel: "Intermedio"
         },
         {
             nombre: "Laravel",
-            imagen: "../img/laravel.webp"
+            imagen: "../img/laravel.webp",
+            nivel: "Intermedio"
         },
         {
             nombre: "Blade",
-            imagen: "../img/blade.png"
+            imagen: "../img/blade.png",
+            nivel: "Básico"
         },
         {
             nombre: "APIs REST",
-            imagen: "../img/api.png"
+            imagen: "../img/api.png",
+            nivel: "Intermedio"
         }
     ],
     proyectos: [
@@ -181,5 +203,22 @@ export const misDatos = {
             link: "https://github.com/Claudiahg97/Panel-de-Control.git",
             imagen: "../img/panel.png"
         }
+    ],
+    idiomas: [
+        { idioma: "Español", nivel: "Nativo" },
+        { idioma: "Inglés", nivel: "B1" }
+    ],
+    datosExtra: [
+        "Carnet de Conducir tipo B y vehículo propio",
+        "Posibilidad de incorporación inmediata"
+    ],
+    aptitudes: [
+        "Gran capacidad de liderazgo",
+        "Facilidad al desempeñar trabajos en equipo",
+        "Gran capacidad de aprendizaje y adaptación",
+        "Grandes habilidades organizativas",
+        "Facilidades comunicativas",
+        "Responsabilidad y motivación",
+        "Conocimientos sobre riesgos laborales"
     ]
 };

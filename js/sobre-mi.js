@@ -26,7 +26,7 @@ function quienSoy() {
 
   // FOTO
   const foto = document.createElement("div");
-  foto.className = "w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-amber-400/50";
+  foto.className = "w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-amber-400/50 hover:border-amber-400 hover:shadow-amber-500/50";
   const imagen = document.createElement("img");
   imagen.src = misDatos.datosPersonales.imagen;
   imagen.alt = misDatos.datosPersonales.nombre;
@@ -77,7 +77,7 @@ function quienSoy() {
 
   const historia = document.createElement("p");
   historia.textContent = `${misDatos.datosPersonales.historia}`;
-  historia.className = "text-lg text-gray-600 text-justify leading-relaxed indent-8 p-8 rounded-lg backdrop-blur-sm border border-amber-400/50 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300";
+  historia.className = "text-lg text-gray-600 text-justify leading-relaxed indent-8 p-8 rounded-lg backdrop-blur-md border border-amber-400/50 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300";
   historia.style.fontFamily = "'Poppins', sans-serif";
   historia.style.whiteSpace = "pre-line";
   historiaContainer.appendChild(historia);
@@ -110,7 +110,7 @@ function experienciaLaboral() {
   // Bucle para crear una tarjeta por cada experiencia
   misDatos.experienciaLaboral.forEach((experiencia) => {
     const tarjeta = document.createElement("div");
-    tarjeta.className = "p-6 rounded-lg leading-relaxed backdrop-blur-sm border border-amber-400/50 hover:border-amber-400 transition-all duration-300 w-full sm:w-80 flex-shrink-0 hover:shadow-lg hover:shadow-amber-500/50 relative z-10";
+    tarjeta.className = "p-6 rounded-lg leading-relaxed backdrop-blur-md border border-amber-400/50 hover:border-amber-400 transition-all duration-300 w-full sm:w-80 flex-shrink-0 hover:shadow-lg hover:shadow-amber-500/50 relative z-10";
 
     //Imagen
     const foto = document.createElement("div");

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Claudia Hernández García</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-12 px-4">
+    <div id="cv-container" class="max-w-7xl mx-auto">
+        <!-- Header será generado dinámicamente -->
+    </div>
+
+    <script>
+        // Datos del CV
+        const miCV = {
+            datosPersonales: {
+                nombre: "Claudia Hernández García",
+                telefono: "680 108 949",
+                email: "claudia.hg.97@gmail.com",
+                direccion: "c/Pintor Cándido Camacho Gómez nº 46, 38770, Tazacorte, S/C de Tenerife",
+                github: "https://github.com/Claudiahg97",
+                descripcion: "Técnico Superior en Desarrollo de Aplicaciones Web con experiencia en administración de sistemas. Apasionada por la tecnología y el aprendizaje continuo."
+            },
+            formacion: [
+                {
+                    titulo: "Desarrollo de Aplicaciones Web",
+                    institucion: "I.E.S José María Pérez Pulido",
+                    ubicacion: "Los Llanos de Aridane",
+                    periodo: "2024 - Actualidad",
+                    tipo: "Técnico Superior"
+                },
+                {
+                    titulo: "Administración de Sistemas Informáticos en Red",
+                    institucion: "I.E.S José María Pérez Pulido",
+                    ubicacion: "Los Llanos de Aridane",
+                    periodo: "2017 - 2019",
+                    tipo: "Técnico Superior"
+                },
+                {
+                    titulo: "Bachillerato Científico Tecnológico",
+                    institucion: "I.E.S José María Pérez Pulido",
+                    ubicacion: "Los Llanos de Aridane",
+                    periodo: "2013 - 2015",
+                    tipo: "Bachillerato"
+                },
+                {
+                    titulo: "ESO Bilingüe",
+                    institucion: "I.E.S José María Pérez Pulido",
+                    ubicacion: "Los Llanos de Aridane",
+                    periodo: "2009 - 2013",
+                    tipo: "Educación Secundaria"
+                }
+            ],
+            experiencia: [
+                {
+                    puesto: "Prácticas de Desarrollo de Aplicaciones Web",
+                    empresa: "Yonedev",
+                    ubicacion: "Tijarafe",
+                    periodo: "2025",
+                    descripcion: "Familiarización con herramientas y aprendizaje de tecnologías actuales."
+                },
+                {
+                    puesto: "Auxiliar Técnico",
+                    empresa: "Instituto Volcanológico de Canarias SA",
+                    ubicacion: "Los Llanos de Aridane",
+                    periodo: "2024 - 2025",
+                    descripcion: "Monitorización del proyecto CO2 en Puerto Naos por la erupción del volcán Tajogaite."
+                },
+                {
+                    puesto: "Dependienta Eventual",
+                    empresa: "Deportes Marba",
+                    ubicacion: "Puntagorda",
+                    periodo: "2020 - 2025",
+                    descripcion: "Atención al cliente, cobros y organización de la tienda según necesidades."
+                },
+                {
+                    puesto: "Cajera/Reponedora",
+                    empresa: "Grupo Dinosol",
+                    ubicacion: "Los Llanos de Aridane",
+                    periodo: "2022",
+                    descripcion: "Atención al cliente, cobros y reposición de productos en tienda."
+                },
+                {
+                    puesto: "Prácticas de Administración de Sistemas Informáticos en Red",
+                    empresa: "Gran Telescopio Canarias",
+                    ubicacion: "Breña Baja",
+                    periodo: "2019",
+                    descripcion: "Prácticas del ciclo superior ASIR en infraestructura tecnológica."
+                }
+            ],
+            aptitudes: [
+                "Gran capacidad de liderazgo",
+                "Facilidad al desempeñar trabajos en equipo",
+                "Gran capacidad de aprendizaje y adaptación",
+                "Grandes habilidades organizativas",
+                "Facilidades comunicativas",
+                "Responsabilidad y motivación",
+                "Conocimientos sobre riesgos laborales"
+            ],
+            conocimientos: [
+                { nombre: "HTML", nivel: "Avanzado" },
+                { nombre: "CSS", nivel: "Avanzado" },
+                { nombre: "PHP", nivel: "Avanzado" },
+                { nombre: "Java", nivel: "Avanzado" },
+                { nombre: "JavaScript", nivel: "Intermedio" },
+                { nombre: "TypeScript", nivel: "Intermedio" },
+                { nombre: "Python", nivel: "Intermedio" },
+                { nombre: "Node.js", nivel: "Intermedio" },
+                { nombre: "MySQL", nivel: "Intermedio" },
+                { nombre: "Git/GitHub", nivel: "Intermedio" },
+                { nombre: "Tailwind CSS", nivel: "Intermedio" },
+                { nombre: "Bootstrap", nivel: "Intermedio" },
+                { nombre: "Laravel", nivel: "Básico" },
+                { nombre: "Docker", nivel: "Básico" }
+            ],
+            idiomas: [
+                { idioma: "Español", nivel: "Nativo" },
+                { idioma: "Inglés", nivel: "B1" }
+            ],
+            datosExtra: [
+                "Carnet de Conducir tipo B y vehículo propio",
+                "Posibilidad de incorporación inmediata"
+            ]
+        };
+
+        // Función para crear el header
+        function crearHeader() {
+            const header = document.createElement("div");
+            header.className = "bg-white rounded-lg shadow-xl p-8 mb-8";
+            header.innerHTML = `
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-2">${miCV.datosPersonales.nombre}</h1>
+                    <p class="text-lg text-gray-600 mb-4">${miCV.datosPersonales.descripcion}</p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-700">
+                        <span class="flex items-center gap-1">📧 ${miCV.datosPersonales.email}</span>
+                        <span class="flex items-center gap-1">📱 ${miCV.datosPersonales.telefono}</span>
+                        <span class="flex items-center gap-1">📍 ${miCV.datosPersonales.direccion}</span>
+                    </div>
+                    <div class="mt-4">
+                        <a href="${miCV.datosPersonales.github}" target="_blank" class="text-blue-600 hover:text-blue-800 underline">
+                            GitHub Profile
+                        </a>
+                    </div>
+                </div>
+            `;
+            return header;
+        }
+
+        // Función para crear sección de experiencia
+        function crearSeccionExperiencia() {
+            const seccion = document.createElement("div");
+            seccion.className = "bg-white rounded-lg shadow-xl p-8 mb-8";
+            seccion.innerHTML = `<h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2">💼 Experiencia Laboral</h2>`;
+
+            const tarjetasContainer = document.createElement("div");
+            tarjetasContainer.className = "flex flex-wrap gap-6 justify-center max-w-7xl mx-auto";
+
+            miCV.experiencia.forEach(exp => {
+                const tarjeta = document.createElement("div");
+                tarjeta.className = "bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow w-full md:w-[calc(50%-12px)]";
+                tarjeta.innerHTML = `
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">${exp.puesto}</h3>
+                    <p class="text-blue-600 font-medium mb-1">${exp.empresa}</p>
+                    <p class="text-sm text-gray-600 mb-2">${exp.ubicacion} • ${exp.periodo}</p>
+                    <p class="text-gray-700 text-sm">${exp.descripcion}</p>
+                `;
+                tarjetasContainer.appendChild(tarjeta);
+            });
+
+            seccion.appendChild(tarjetasContainer);
+            return seccion;
+        }
+
+        // Función para crear sección de formación
+        function crearSeccionFormacion() {
+            const seccion = document.createElement("div");
+            seccion.className = "bg-white rounded-lg shadow-xl p-8 mb-8";
+            seccion.innerHTML = `<h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">🎓 Formación Académica</h2>`;
+
+            const tarjetasContainer = document.createElement("div");
+            tarjetasContainer.className = "flex flex-wrap gap-6 justify-center max-w-7xl mx-auto";
+
+            miCV.formacion.forEach(form => {
+                const tarjeta = document.createElement("div");
+                tarjeta.className = "bg-gradient-to-br from-green-50 to-white border border-green-200 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow w-full md:w-[calc(50%-12px)]";
+                tarjeta.innerHTML = `
+                    <span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full mb-3">${form.tipo}</span>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">${form.titulo}</h3>
+                    <p class="text-green-600 font-medium mb-1">${form.institucion}</p>
+                    <p class="text-sm text-gray-600">${form.ubicacion} • ${form.periodo}</p>
+                `;
+                tarjetasContainer.appendChild(tarjeta);
+            });
+
+            seccion.appendChild(tarjetasContainer);
+            return seccion;
+        }
+
+        // Función para crear sección de conocimientos
+        function crearSeccionConocimientos() {
+            const seccion = document.createElement("div");
+            seccion.className = "bg-white rounded-lg shadow-xl p-8 mb-8";
+            seccion.innerHTML = `<h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">🛠️ Conocimientos Técnicos</h2>`;
+
+            const tarjetasContainer = document.createElement("div");
+            tarjetasContainer.className = "flex flex-wrap gap-4 justify-center max-w-7xl mx-auto";
+
+            miCV.conocimientos.forEach(conocimiento => {
+                const tarjeta = document.createElement("div");
+                tarjeta.className = "bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-lg px-4 py-3 shadow-md hover:shadow-lg transition-shadow";
+                tarjeta.innerHTML = `
+                    <p class="text-gray-800 font-medium">${conocimiento.nombre}</p>
+                    <p class="text-xs text-purple-600">${conocimiento.nivel}</p>
+                `;
+                tarjetasContainer.appendChild(tarjeta);
+            });
+
+            seccion.appendChild(tarjetasContainer);
+            return seccion;
+        }
+
+        // Función para crear sección de aptitudes e idiomas
+        function crearSeccionAptitudesIdiomas() {
+            const seccion = document.createElement("div");
+            seccion.className = "bg-white rounded-lg shadow-xl p-8 mb-8";
+
+            const contenedor = document.createElement("div");
+            contenedor.className = "grid md:grid-cols-2 gap-8";
+
+            // Aptitudes
+            const aptitudes = document.createElement("div");
+            aptitudes.innerHTML = `
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-orange-500 pb-2">⭐ Aptitudes</h2>
+                <ul class="space-y-2">
+                    ${miCV.aptitudes.map(apt => `<li class="flex items-start gap-2 text-gray-700"><span class="text-orange-500 mt-1">•</span><span>${apt}</span></li>`).join('')}
+                </ul>
+            `;
+
+            // Idiomas y Datos Extra
+            const extra = document.createElement("div");
+            extra.innerHTML = `
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-orange-500 pb-2">🌍 Idiomas</h2>
+                <ul class="space-y-2 mb-6">
+                    ${miCV.idiomas.map(idioma => `<li class="flex items-start gap-2 text-gray-700"><span class="text-orange-500 mt-1">•</span><span>${idioma.idioma}: ${idioma.nivel}</span></li>`).join('')}
+                </ul>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-orange-500 pb-2">📋 Datos Adicionales</h2>
+                <ul class="space-y-2">
+                    ${miCV.datosExtra.map(dato => `<li class="flex items-start gap-2 text-gray-700"><span class="text-orange-500 mt-1">•</span><span>${dato}</span></li>`).join('')}
+                </ul>
+            `;
+
+            contenedor.appendChild(aptitudes);
+            contenedor.appendChild(extra);
+            seccion.appendChild(contenedor);
+            return seccion;
+        }
+
+        // Renderizar el CV
+        function renderizarCV() {
+            const container = document.getElementById('cv-container');
+            container.appendChild(crearHeader());
+            container.appendChild(crearSeccionExperiencia());
+            container.appendChild(crearSeccionFormacion());
+            container.appendChild(crearSeccionConocimientos());
+            container.appendChild(crearSeccionAptitudesIdiomas());
+        }
+
+        // Inicializar
+        renderizarCV();
+    </script>
+</body>
+
+</html>

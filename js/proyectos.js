@@ -26,13 +26,15 @@ function proyectos(){
     // Bucle para crear una tarjeta por cada proyectos
     misDatos.proyectos.forEach((proyectos) => {
         const tarjeta = document.createElement("div");
-        tarjeta.className = "p-6 rounded-lg leading-relaxed backdrop-blur-sm border border-amber-400/50 hover:border-amber-400 transition-all duration-300 w-full sm:w-[400px] flex-shrink-0 hover:shadow-lg hover:shadow-amber-500/50 relative z-10";
+        tarjeta.className = "p-6 rounded-lg leading-relaxed backdrop-blur-md border border-amber-400/50 hover:border-amber-400 transition-all duration-300 w-full sm:w-[400px] flex-shrink-0 hover:shadow-lg hover:shadow-amber-500/50 relative z-10";
 
         //Imagen
         const foto = document.createElement("div");
         foto.className = "w-80 overflow-hidden shadow-lg mx-auto mb-4 border-2 border-amber-400/50";
         const link = document.createElement("a");
-        link.src = proyectos.link;
+        link.href = proyectos.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
         const imagen = document.createElement("img");
         imagen.src = proyectos.imagen;
         imagen.alt = proyectos.nombre;
