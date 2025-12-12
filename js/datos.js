@@ -13,24 +13,43 @@ export const misDatos = {
     },
     estudios: [
         {
+            titulo: "ESO Bilingüe",
+            institucion: "I.E.S José María Pérez Pulido",
+            ubicacion: "Los Llanos de Aridane",
+            fechaInicio: "Septiembre 2009",
+            fechaFin: "Junio 2013",
+            tipo: "Educación Secundaria"
+        }, 
+        {
+            titulo: "Bachillerato Científico Tecnológico",
+            institucion: "I.E.S José María Pérez Pulido",
+            ubicacion: "Los Llanos de Aridane",
+            fechaInicio: "Septiembre 2013",
+            fechaFin: "Junio 2015",
+            tipo: "Bachillerato"
+        },
+        {
             titulo: "Técnico superior en Administración de Sistemas Informáticos en Red",
             institucion: "I.E.S. José María Pérez Pulido",
-            fechaInicio: "septiembre 2017",
+            fechaInicio: "Septiembre 2017",
             fechaFin: "Junio 2019",
-            descripcion: "Manejo y configuración de sistemas y redes"
+            descripcion: "Manejo y configuración de sistemas y redes",
+            tipo: "Técnico Superior"
         },
         {
             titulo: "Técnico Superior en Desarrollo de Aplicaciones Web",
             institucion: "I.E.S. José María Pérez Pulido",
-            fechaInicio: "septiembre 2023",
-            fechaFin: "Junio 2025",
-            descripcion: "Creación y desarrollo de Aplicaciones web"
+            fechaInicio: "Septiembre 2024",
+            fechaFin: "Junio 2026",
+            descripcion: "Creación y desarrollo de Aplicaciones web",
+            tipo: "Técnico Superior"
         }
     ],
     experienciaLaboral: [
         {
             puesto: "Prácticas no Remuneradas",
-            empresa: "Gran Telescopio de Canarias", 
+            empresa: "Gran Telescopio de Canarias",
+            ubicacion: "Breña Baja",
             fechaInicio: "Abril 2019",
             fechaFin: "Junio 2019",
             descripcion: "Prácticas del ciclo superior (ASIR)",
@@ -39,6 +58,7 @@ export const misDatos = {
         {
             puesto: "Cajera/Reponedora",
             empresa: "Grupo Dinosol",
+            ubicacion: "Los Llanos de Aridane",
             fechaInicio: "Junio 2021",
             fechaFin: "Junio 2021",
             descripcion: "Atención al cliente, cobros y reposición de los productos en tienda.",
@@ -47,6 +67,7 @@ export const misDatos = {
         {
             puesto: "Dependienta",
             empresa: "Deportes Marba",
+            ubicacion: "Puntagorda",
             fechaInicio: "Abril 2021",
             fechaFin: "Noviembre 2025",
             descripcion: "Atención al cliente, cobros y organización de la tienda. Trabajo de forma eventual según necesidades" ,
@@ -55,6 +76,7 @@ export const misDatos = {
         {
             puesto: "Auxiliar Administrativo",
             empresa: "Instituto Vulcanológico de Canarias SA",
+            ubicacion: "Los Llanos de Aridane",
             fechaInicio: "Diciembre 2024",
             fechaFin: "Mayo 2025",
             descripcion: "Monitorización del proyecto CO2 en Puerto Naos por la erupción del volcán Tajogaite" ,
@@ -63,6 +85,7 @@ export const misDatos = {
         {
             puesto: "Prácticas no Remuneradas",
             empresa: "Yonedev",
+            ubicacion: "Tijarafe",
             fechaInicio: "Mayo 2025",
             fechaFin: "Junio 2025",
             descripcion: "Familiarización con herramientas y Aprendizaje de Tecnologías Actuales. Prácticas el ciclo superior (DAW)" ,
