@@ -67,7 +67,7 @@ function generarNav() {
         element.style.transition = `opacity 0.3s ease-out ${index * 0.1}s, transform 0.3s ease-out ${index * 0.1}s`;
 
         const link = document.createElement("a");
-        link.href = item.archivo; // Ahora cada enlace apunta a su archivo
+        link.href = item.archivo;
         link.className = "block hover:text-amber-400 transition-colors duration-200 whitespace-nowrap text-lg py-2 md:py-0";
         link.textContent = item.texto;
 
@@ -81,13 +81,11 @@ function generarNav() {
         overlay.classList.remove("hidden");
         setTimeout(() => overlay.classList.add("opacity-100"), 10);
 
-        // Animar items del menú
         const items = lista.querySelectorAll("li");
         items.forEach(item => {
             item.classList.remove("opacity-0", "translate-x-8");
         });
 
-        // Rotar botón hamburguesa
         botonHamburguesa.style.transform = "rotate(90deg)";
     }
 
@@ -97,7 +95,6 @@ function generarNav() {
         overlay.classList.remove("opacity-100");
         setTimeout(() => overlay.classList.add("hidden"), 300);
 
-        // Resetear animación de items
         const items = lista.querySelectorAll("li");
         items.forEach(item => {
             if (window.innerWidth < 768) {
@@ -105,7 +102,6 @@ function generarNav() {
             }
         });
 
-        // Resetear rotación del botón
         botonHamburguesa.style.transform = "rotate(0deg)";
     }
 
@@ -121,7 +117,6 @@ function generarNav() {
     botonCerrar.addEventListener("click", cerrarMenu);
     overlay.addEventListener("click", cerrarMenu);
 
-    // Cerrar menú al hacer click en un enlace (solo en móvil)
     const enlaces = lista.querySelectorAll("a");
     enlaces.forEach(enlace => {
         enlace.addEventListener("click", () => {
@@ -131,7 +126,6 @@ function generarNav() {
         });
     });
 
-    // Cerrar menú al redimensionar a desktop
     window.addEventListener("resize", () => {
         if (window.innerWidth >= 768) {
             lista.style.right = "auto";
@@ -139,7 +133,82 @@ function generarNav() {
             botonHamburguesa.style.transform = "rotate(0deg)";
         }
     });
+
     padre.appendChild(nav);
+
+    document.body.style.paddingTop = "100px";
 }
 
 generarNav();
+
+import { misDatos } from "../js/datos.js";
+
+function crearFooter() {
+    const footer = document.createElement("footer");
+    footer.className = "py-8 border-t-2 backdrop-blur-md";
+    footer.style.background = "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)";
+
+    const contenedor = document.createElement("div");
+    contenedor.className = "max-w-7xl mx-auto px-6";
+
+    const contenido = document.createElement("div");
+    contenido.className = "flex flex-col md:flex-row justify-between items-center gap-4";
+
+    // Sección izquierda
+    const seccionIzq = document.createElement("div");
+    seccionIzq.className = "text-center md:text-left";
+
+    const nombre = document.createElement("p");
+    nombre.className = "text-teal-800 font-bold text-lg";
+    nombre.style.fontFamily = "'Poppins', sans-serif";
+    nombre.textContent = `${misDatos.datosPersonales.nombre} ${misDatos.datosPersonales.apellidos}`;
+    seccionIzq.appendChild(nombre);
+
+    const copyright = document.createElement("p");
+    copyright.className = "text-gray-600 text-sm mt-1";
+    copyright.textContent = `© ${new Date().getFullYear()} Todos los derechos reservados`;
+    seccionIzq.appendChild(copyright);
+
+    contenido.appendChild(seccionIzq);
+
+    const seccionDer = document.createElement("div");
+    seccionDer.className = "flex gap-4";
+
+    const redes = [
+        { nombre: "LinkedIn", icono: "../img/linkedin.png", tipo: "imagen", url: misDatos.datosPersonales.linkedin },
+        { nombre: "GitHub", icono: "../img/github-logo (1).png", tipo: "imagen", url: misDatos.datosPersonales.github }
+    ];
+
+    redes.forEach(red => {
+        const enlace = document.createElement("a");
+        enlace.href = red.url;
+        enlace.target = "_blank";
+        enlace.rel = "noopener noreferrer";
+        enlace.className = "hover:scale-125 transition-transform duration-300";
+        enlace.title = red.nombre;
+
+        if (red.tipo === "imagen") {
+            const img = document.createElement("img");
+            img.src = red.icono;
+            img.alt = red.nombre;
+            img.className = "w-8 h-8 object-contain";
+            enlace.appendChild(img);
+        } else {
+            enlace.className += " text-2xl";
+            enlace.textContent = red.icono;
+        }
+
+        seccionDer.appendChild(enlace);
+    });
+
+    contenido.appendChild(seccionDer);
+    contenedor.appendChild(contenido);
+    footer.appendChild(contenedor);
+
+    return footer;
+}
+
+// Añadir el footer automáticamente cuando se carga el script
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.appendChild(crearFooter());
+});

@@ -1,2 +1,0 @@
-import { misDatos } from "./datos";
-

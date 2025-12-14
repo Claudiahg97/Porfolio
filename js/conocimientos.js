@@ -88,7 +88,7 @@ function conocimientos(){
     // Bucle para crear una tarjeta por cada conocimientos
     misDatos.conocimientos.forEach((conocimientos) => {
         const tarjeta = document.createElement("div");
-        tarjeta.className = "p-6 rounded-lg leading-relaxed backdrop-blur-md border border-amber-400/50 hover:border-amber-400 transition-all duration-300 w-full sm:w-80 flex-shrink-0 hover:shadow-lg hover:shadow-amber-500/50 relative z-10";
+        tarjeta.className = "p-6 rounded-lg leading-relaxed backdrop-blur-md border border-amber-400/50 transition-all duration-300 w-full sm:w-80 flex-shrink-0 hover:shadow-lg hover:border-amber-400 hover:shadow-amber-500/50 relative z-10";
 
         //Imagen
         const foto = document.createElement("div");

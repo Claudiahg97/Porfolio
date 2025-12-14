@@ -58,16 +58,16 @@ function quienSoy() {
   datos.appendChild(direccionP);
 
   // GitHub
-  const githubP = document.createElement("p");
-  githubP.className = "text-lg text-gray-700";
-  const githubLink = document.createElement("a");
-  githubLink.href = misDatos.datosPersonales.github;
-  githubLink.target = "_blank";
-  githubLink.className = "text-amber-500 hover:text-amber-600 underline transition-colors";
-  githubLink.textContent = "Ver mi GitHub";
-  githubP.innerHTML = "<strong class='text-teal-800'>GitHub:</strong> ";
-  githubP.appendChild(githubLink);
-  datos.appendChild(githubP);
+  // const githubP = document.createElement("p");
+  // githubP.className = "text-lg text-gray-700";
+  // const githubLink = document.createElement("a");
+  // githubLink.href = misDatos.datosPersonales.github;
+  // githubLink.target = "_blank";
+  // githubLink.className = "text-amber-500 hover:text-amber-600 underline transition-colors";
+  // githubLink.textContent = "Ver mi GitHub";
+  // githubP.innerHTML = "<strong class='text-teal-800'>GitHub:</strong> ";
+  // githubP.appendChild(githubLink);
+  // datos.appendChild(githubP);
 
   contenedorDatos.appendChild(datos);
 
