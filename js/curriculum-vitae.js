@@ -184,8 +184,140 @@ function curriculumForm(){
     contenedor.appendChild(tarjetaExpsContainer2);
 }
 
+function curriculumCono() {
+    const tarjetaExpsContainer2 = document.createElement("div");
+    tarjetaExpsContainer2.className = "flex flex-wrap gap-6 justify-center max-w-7xl mx-auto mt-[100px]";
+
+    const tarjetaExp = document.createElement("div");
+    tarjetaExp.className = "p-6 rounded-lg leading-relaxed backdrop-blur-md border border-amber-400/50 transition-all duration-300 w-full sm:w-[1000px] flex-shrink-0 hover:shadow-lg  relative z-10";
+
+    // tituloT2
+    const tituloT2 = document.createElement("h3");
+    tituloT2.className = "text-4xl font-bold text-teal-800 mb-6 border-b-2 border-amber-400 pb-2";
+    tituloT2.style.fontFamily = "'Poppins', sans-serif";
+    tituloT2.textContent = "🛠️ Conocimientos Técnicos";
+    tarjetaExp.appendChild(tituloT2);
+
+    const forma = document.createElement("div");
+    forma.className = "mt-4 flex flex-wrap gap-6 justify-center max-w-7xl mx-auto";
+
+    misDatos.conocimientos.forEach(conocimiento => {
+        const formacion = document.createElement("div");
+        formacion.className = "bg-gradient-to-br from-teal-50/50 to-amber-400/25 border border-amber-400/50 rounded-lg p-6 shadow-md hover:shadow-xl text-center transition-shadow w-full md:w-[calc(25%-12px)] hover:border-amber-400 hover:shadow-amber-500/50";
+
+        const institucion = document.createElement("p");
+        institucion.className = "text-lg font-bold text-teal-800 font-semibold mb-3 ";
+        institucion.textContent = conocimiento.nombre;
+        formacion.appendChild(institucion);
+
+        const fechas = document.createElement("p");
+        fechas.className = "text-sm text-amber-500 mb-4 ";
+        fechas.textContent = conocimiento.nivel;
+        formacion.appendChild(fechas);
+
+        forma.appendChild(formacion);
+    })
+    tarjetaExp.appendChild(forma);
+    tarjetaExpsContainer2.appendChild(tarjetaExp);
+    contenedor.appendChild(tarjetaExpsContainer2);
+}
+
+function curriculumExtra() {
+    const tarjetaExpsContainer2 = document.createElement("div");
+    tarjetaExpsContainer2.className = "flex flex-wrap gap-6 justify-center max-w-7xl mx-auto mt-[100px]";
+
+    const tarjetaExp = document.createElement("div");
+    tarjetaExp.className = "p-6 rounded-lg leading-relaxed backdrop-blur-md border border-amber-400/50 transition-all duration-300 w-full sm:w-[1000px] flex-shrink-0 hover:shadow-lg relative z-10";
+
+    // tituloT2
+    const tituloT2 = document.createElement("h3");
+    tituloT2.className = "text-4xl font-bold text-teal-800 mb-6 border-b-2 border-amber-400 pb-2";
+    tituloT2.style.fontFamily = "'Poppins', sans-serif";
+    tituloT2.textContent = "⭐ Aptitudes";
+    tarjetaExp.appendChild(tituloT2);
+
+    const aptitudes = document.createElement("ul");
+    aptitudes.className = "space-y-2";
+
+    misDatos.aptitudes.forEach(apt => {
+        const formacion = document.createElement("li");
+        formacion.className = "flex items-start gap-2 text-gray-700";
+
+        const punto = document.createElement("span");
+        punto.className = "text-teal-800 mt-1";
+        punto.textContent = "•";
+        formacion.appendChild(punto);
+
+        const tipo = document.createElement("span");
+        tipo.textContent = apt;
+        formacion.appendChild(tipo);
+
+        aptitudes.appendChild(formacion); 
+    });
+    tarjetaExp.appendChild(aptitudes);
+
+    // Idiomas
+    const idiomas = document.createElement("h3");
+    idiomas.className = "text-4xl font-bold text-teal-800 mb-6 border-b-2 border-amber-400 pb-2 mt-8"; 
+    idiomas.style.fontFamily = "'Poppins', sans-serif";
+    idiomas.textContent = "🌍 Idiomas";
+    tarjetaExp.appendChild(idiomas);
+
+    const idioma = document.createElement("ul");
+    idioma.className = "space-y-2";
+
+    misDatos.idiomas.forEach(idiomaItem => { 
+        const formacion = document.createElement("li");
+        formacion.className = "flex items-start gap-2 text-gray-700";
+
+        const punto = document.createElement("span");
+        punto.className = "text-teal-800 mt-1";
+        punto.textContent = "•";
+        formacion.appendChild(punto);
+
+        const tipo = document.createElement("span");
+        tipo.textContent = `${idiomaItem.idioma}: ${idiomaItem.nivel}`;
+        formacion.appendChild(tipo);
+
+        idioma.appendChild(formacion);
+    });
+    tarjetaExp.appendChild(idioma);
+
+    // Datos Adicionales
+    const datos = document.createElement("h3");
+    datos.className = "text-4xl font-bold text-teal-800 mb-6 border-b-2 border-amber-400 pb-2 mt-8"; 
+    datos.style.fontFamily = "'Poppins', sans-serif";
+    datos.textContent = "📋 Datos Adicionales";
+    tarjetaExp.appendChild(datos);
+
+    const adicionales = document.createElement("ul");
+    adicionales.className = "space-y-2";
+
+    misDatos.datosExtra.forEach(dato => {
+        const formacion = document.createElement("li");
+        formacion.className = "flex items-start gap-2 text-gray-700";
+
+        const punto = document.createElement("span");
+        punto.className = "text-teal-800 mt-1";
+        punto.textContent = "•";
+        formacion.appendChild(punto);
+
+        const tipo = document.createElement("span");
+        tipo.textContent = `${dato}`;
+        formacion.appendChild(tipo);
+
+        adicionales.appendChild(formacion);
+    });
+    tarjetaExp.appendChild(adicionales);
+
+    tarjetaExpsContainer2.appendChild(tarjetaExp);
+    contenedor.appendChild(tarjetaExpsContainer2);
+}
+
 fuera.appendChild(contenedor);
 crearParticulasGlobales();
 curriculumInfo();
 curriculumExp();
 curriculumForm();
+curriculumCono();
+curriculumExtra();
