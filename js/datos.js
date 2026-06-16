@@ -90,6 +90,15 @@ export const misDatos = {
             fechaFin: "Junio 2025",
             descripcion: "Familiarización con herramientas y Aprendizaje de Tecnologías Actuales. Prácticas el ciclo superior (DAW)" ,
             imagen: "../img/yonedev.jpg"
+        },
+        {
+            puesto: "Prácticas no Remuneradas",
+            empresa: "Cherenkov Telescope Array Observatory ",
+            ubicacion: "Breña Baja",
+            fechaInicio: "Febrero 2026",
+            fechaFin: "Mayo 2026",
+            descripcion: "Desarrollo de una herramnienta de anáisis de logs con Python y LLM. Prácticas el ciclo superior (DAW)" ,
+            imagen: "../img/ctao.png"
         }
     ],
     conocimientos: [
@@ -170,7 +179,8 @@ export const misDatos = {
         },
         {
             nombre: "Docker",
-            imagen: "../img/docker.png"
+            imagen: "../img/docker.png",
+            nivel: "Básico"
         },
         {
             nombre: "Linux",
@@ -196,7 +206,28 @@ export const misDatos = {
             nombre: "APIs REST",
             imagen: "../img/api.png",
             nivel: "Intermedio"
+        }, 
+        {
+            nombre: "Vue",
+            imagen: "../img/vue.png",
+            nivel: "Básico"
+        },
+        {
+            nombre: "ollama",
+            imagen: "../img/ollama.png",
+            nivel: "Intermedio"
+        },
+        {
+            nombre: "GitLab",
+            imagen: "../img/gitlab.png",
+            nivel: "Básico"
+        },
+        {
+            nombre: "StreamLit",
+            imagen: "../img/streamlit.jpg",
+            nivel: "Básico"
         }
+
     ],
     proyectos: [
         {
