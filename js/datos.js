@@ -213,7 +213,7 @@ export const misDatos = {
             nivel: "Básico"
         },
         {
-            nombre: "ollama",
+            nombre: "Ollama",
             imagen: "../img/ollama.png",
             nivel: "Intermedio"
         },
@@ -233,30 +233,37 @@ export const misDatos = {
         {
             nombre: "Portfolio Personal",
             descripcion: "Un portafolio personal desarrollado para mostrar mis capacidades.",
-            tecnologias: ["HTML", "CSS", "JavaScript", "Tailwind"],
+            tecnologias: ["HTML", " CSS", " JavaScript", " Tailwind"],
             link: "https://github.com/Claudiahg97/Porfolio.git",
             imagen: "../img/porfolio.png"
         },
         {
             nombre: "Biblioteca Online",
             descripcion: "Una web donde los usuarios registrados registran libros y votan por sus favoritos.",
-            tecnologias: ["HTML", "CSS", "PHP", "SQL"],
+            tecnologias: ["HTML", " CSS", " PHP", " SQL"],
             link: "https://github.com/Claudiahg97/Biblioteca-Online-AJAX.git",
             imagen: "../img/biblioteca.png"
         },
         {
             nombre: "Tienda de Alimentación ",
             descripcion: "Un web sobre una tienda de alimentación para practicar CSS.",
-            tecnologias: ["HTML", "CSS"],
+            tecnologias: ["HTML", " CSS"],
             link: "https://github.com/Claudiahg97/RepasoCSS.git",
             imagen: "../img/alimentacion.png"
         },
         {
             nombre: "Panel de Control",
             descripcion: "Un panel de control sobre una tienda de ropa para practicar el uso de Bootstrap.",
-            tecnologias: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+            tecnologias: ["HTML", " CSS", " Bootstrap", " JavaScript"],
             link: "https://github.com/Claudiahg97/Panel-de-Control.git",
             imagen: "../img/panel.png"
+        },
+        {
+            nombre: "Analizador de Logs",
+            descripcion: "Una aplicación para analizar y visualizar logs de sistemas.",
+            tecnologias: ["Python", "  Streamlit", "  PParser", "  Ollama"],
+            link: "https://github.com/Claudiahg97/Analizador-de-Logs.git",
+            imagen: "../img/logs.png"
         }
     ],
     idiomas: [
