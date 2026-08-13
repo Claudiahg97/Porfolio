@@ -230,40 +230,100 @@ export const misDatos = {
 
     ],
     proyectos: [
-        {
-            nombre: "Portfolio Personal",
-            descripcion: "Un portafolio personal desarrollado para mostrar mis capacidades.",
-            tecnologias: ["HTML", " CSS", " JavaScript", " Tailwind"],
-            link: "https://github.com/Claudiahg97/Porfolio.git",
-            imagen: "../img/porfolio.png"
-        },
+        // Campos por proyecto:
+        //   link  -> URL del repositorio (GitHub)
+        //   demo  -> URL de la demo en vivo (déjalo "" si aún no la tienes)
+        //   video -> URL a un vídeo/GIF de demostración (Loom, YouTube...) ("" si no hay)
+        // Los botones "Ver demo" y "Ver vídeo" solo aparecen si su URL no está vacía.
+        // {
+        //     nombre: "Portfolio Personal",
+        //     descripcion: "Un portafolio personal desarrollado para mostrar mis capacidades.",
+        //     tecnologias: ["HTML", " CSS", " JavaScript", " Tailwind"],
+        //     link: "https://github.com/Claudiahg97/Porfolio.git",
+        //     imagen: "../img/porfolio.png",
+        //     demo: "https://claudiahg97.github.io/Porfolio/",
+        //     video: ""
+        // },
         {
             nombre: "Biblioteca Online",
             descripcion: "Una web donde los usuarios registrados registran libros y votan por sus favoritos.",
-            tecnologias: ["HTML", " CSS", " PHP", " SQL"],
+            tecnologias: ["HTML", " CSS", " PHP", " SQL", " AJAX", " JavaScript"],
             link: "https://github.com/Claudiahg97/Biblioteca-Online-AJAX.git",
-            imagen: "../img/biblioteca.png"
+            imagen: "../img/biblioteca.png",
+            demo: "http://biblioteca-online.great-site.net/index.php",
+            video: ""
         },
         {
             nombre: "Tienda de Alimentación ",
             descripcion: "Un web sobre una tienda de alimentación para practicar CSS.",
             tecnologias: ["HTML", " CSS"],
             link: "https://github.com/Claudiahg97/RepasoCSS.git",
-            imagen: "../img/alimentacion.png"
+            imagen: "../img/alimentacion.png",
+            demo: "https://claudiahg97.github.io/RepasoCSS/",
+            video: ""
         },
         {
             nombre: "Panel de Control",
             descripcion: "Un panel de control sobre una tienda de ropa para practicar el uso de Bootstrap.",
             tecnologias: ["HTML", " CSS", " Bootstrap", " JavaScript"],
             link: "https://github.com/Claudiahg97/Panel-de-Control.git",
-            imagen: "../img/panel.png"
+            imagen: "../img/panel.png",
+            demo: "https://claudiahg97.github.io/Panel-de-Control/",
+            video: ""
+        },
+        {
+            nombre: "Generador de mundos aleatorios",
+            descripcion: "Un juego de memoria para practicar JavaScript.",
+            tecnologias: ["HTML", " CSS", " JavaScript"],
+            link: "https://github.com/Claudiahg97/AgendaMacronutrientes.git",
+            imagen: "../img/mundos.png",
+            demo: "https://claudiahg97.github.io/Generador-de-mundos/",
+            video: ""
+        },
+        {
+            nombre: "Tienda con Vue.js",
+            descripcion: "Una tienda en línea desarrollada con Vue.js para practicar el desarrollo frontend.",
+            tecnologias: ["HTML", " CSS", " JavaScript", " Vue.js"],
+            link: "https://github.com/Claudiahg97/Tienda-con-Vue.js.git",
+            imagen: "../img/Tienda.png",
+            demo: "https://claudiahg97.github.io/Tienda-con-Vue/",
+            video: ""
+        },
+        {
+            nombre: "Agenda de Macronutrientes",
+            descripcion: "Una agenda para gestionar la ingesta de macronutrientes diaria.",
+            tecnologias: ["LAravel", " PHP", " export PDF", " MySQL"],
+            link: "https://github.com/Claudiahg97/AgendaMacronutrientes.git",
+            imagen: "../img/macronutrientes.png",
+            demo: "",
+            video: ""
+        },
+        {
+            nombre: "Población por Sexo",
+            descripcion: "Análisis de la población por sexo en diferentes regiones.",
+            tecnologias: ["Laravel", " API REST", " maatwebsite/ecxel", " MySQL"],
+            link: "https://github.com/Claudiahg97/Poblacion-por-sexo.git",
+            imagen: "../img/poblacion.png",
+            demo: "",
+            video: ""
         },
         {
             nombre: "Analizador de Logs",
             descripcion: "Una aplicación para analizar y visualizar logs de sistemas.",
-            tecnologias: ["Python", "  Streamlit", "  PParser", "  Ollama"],
+            tecnologias: ["Python", "  Streamlit", "  Parser", "  Ollama"],
             link: "https://github.com/Claudiahg97/Analizador-de-Logs.git",
-            imagen: "../img/logs.png"
+            imagen: "../img/logs.png",
+            demo: "",
+            video: ""
+        },
+        {
+            nombre: "Mercadillos en La Palma",
+            descripcion: "Plataforma marketplace para los mercadillos locales de La Palma, con datos reales de los 14 municipios. Proyecto en equipo.",
+            tecnologias: ["Laravel", " PHP", " Blade", " MySQL"],
+            link: "",                          // TODO: pega aquí la URL del repositorio
+            imagen: "../img/mercadillos.png",  // TODO: añade esta imagen a la carpeta img/
+            demo: "https://mercadilloslapalma.departamentoinformaticajmpp.com",                          // opcional: URL de la demo (InfinityFree, etc.)
+            video: ""                          // opcional: URL de un vídeo de demostración
         }
     ],
     idiomas: [

@@ -32,7 +32,7 @@ function proyectos(){
         const foto = document.createElement("div");
         foto.className = "w-80 overflow-hidden shadow-lg mx-auto mb-4 border-2 border-amber-400/50";
         const link = document.createElement("a");
-        link.href = proyectos.link;
+        link.href = proyectos.demo || proyectos.link;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
         const imagen = document.createElement("img");
@@ -61,6 +61,35 @@ function proyectos(){
         descripcion.className = "text-sm text-amber-500 mb-4 text-center";
         descripcion.textContent = proyectos.descripcion;
         tarjeta.appendChild(descripcion);
+
+        // Botones: "Ver demo" / "Ver vídeo" / "Ver código".
+        // Cada botón solo se crea si su URL existe en datos.js.
+        const botones = document.createElement("div");
+        botones.className = "flex flex-wrap gap-3 justify-center mt-2";
+
+        function crearBoton(texto, url, tipo) {
+            if (!url) return; // sin URL, no se pinta el botón
+            const boton = document.createElement("a");
+            boton.href = url;
+            boton.target = "_blank";
+            boton.rel = "noopener noreferrer";
+            boton.textContent = texto;
+            if (tipo === "primario") {
+                // Botón destacado (mismo degradado dorado que el título)
+                boton.className = "px-4 py-2 rounded-full text-sm font-bold text-gray-900 shadow-md hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300";
+                boton.style.background = "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)";
+            } else {
+                // Botón secundario (contorno dorado)
+                boton.className = "px-4 py-2 rounded-full text-sm font-semibold text-amber-400 border border-amber-400/60 hover:border-amber-400 hover:bg-amber-400/10 transition-all duration-300";
+            }
+            botones.appendChild(boton);
+        }
+
+        crearBoton("Ver demo", proyectos.demo, "primario");
+        crearBoton("Ver vídeo", proyectos.video, "secundario");
+        crearBoton("Ver código", proyectos.link, "secundario");
+
+        tarjeta.appendChild(botones);
 
         tarjetasContainer.appendChild(tarjeta);
     });
