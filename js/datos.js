@@ -294,19 +294,19 @@ export const misDatos = {
             descripcion: "Una agenda para gestionar la ingesta de macronutrientes diaria.",
             tecnologias: ["LAravel", " PHP", " export PDF", " MySQL"],
             link: "https://github.com/Claudiahg97/AgendaMacronutrientes.git",
-            imagen: "../img/macronutrientes.png",
+            imagen: "../img/agenda.png",
             demo: "",
             video: ""
         },
-        {
-            nombre: "Población por Sexo",
-            descripcion: "Análisis de la población por sexo en diferentes regiones.",
-            tecnologias: ["Laravel", " API REST", " maatwebsite/ecxel", " MySQL"],
-            link: "https://github.com/Claudiahg97/Poblacion-por-sexo.git",
-            imagen: "../img/poblacion.png",
-            demo: "",
-            video: ""
-        },
+        // {
+        //     nombre: "Población por Sexo",
+        //     descripcion: "Análisis de la población por sexo en diferentes regiones.",
+        //     tecnologias: ["Laravel", " API REST", " maatwebsite/ecxel", " MySQL"],
+        //     link: "https://github.com/Claudiahg97/Poblacion-por-sexo.git",
+        //     imagen: "../img/poblacion.png",
+        //     demo: "",
+        //     video: ""
+        // },
         {
             nombre: "Analizador de Logs",
             descripcion: "Una aplicación para analizar y visualizar logs de sistemas.",
