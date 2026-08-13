@@ -294,7 +294,7 @@ export const misDatos = {
             descripcion: "Una agenda para gestionar la ingesta de macronutrientes diaria.",
             tecnologias: ["LAravel", " PHP", " export PDF", " MySQL"],
             link: "https://github.com/Claudiahg97/AgendaMacronutrientes.git",
-            imagen: "../img/agenda.png",
+            imagen: "../img/Agenda.png",
             demo: "",
             video: ""
         },
