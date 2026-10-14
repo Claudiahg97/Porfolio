@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#fff7e6"/>
+  <!-- Flujo de valor -->
+  <path d="M20 32h18l12 18-12 18H20l12-18z" fill="#143642"/>
+  <path d="M46 32h18l12 18-12 18H46l12-18z" fill="#f59e0b"/>
+</svg>

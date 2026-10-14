@@ -1,3 +1,6 @@
+import { s, crearSelectorIdioma } from "./i18n.js";
+import { crearFooter } from "./footer.js";
+
 const padre = document.getElementById("nav");
 
 function generarNav() {
@@ -17,8 +20,10 @@ function generarNav() {
     // Logo
     const logo = document.createElement("a");
     logo.href = "../index.html";
+    logo.setAttribute("aria-label", s("nav.logo"));
     const logoImg = document.createElement("img");
     logoImg.src = "../img/logo.png";
+    logoImg.alt = "Logo Claudia Hdez";
     logoImg.className = "w-24 h-auto";
     logo.appendChild(logoImg);
     navWrapper.appendChild(logo);
@@ -32,8 +37,10 @@ function generarNav() {
     // Botón hamburguesa (solo visible en móvil)
     const botonHamburguesa = document.createElement("button");
     botonHamburguesa.className = "md:hidden focus:outline-none z-50 relative transition-transform duration-300";
+    botonHamburguesa.setAttribute("aria-label", s("nav.abrirMenu"));
     const menu = document.createElement("img");
     menu.src = "../img/menu.png";
+    menu.alt = "";
     menu.className = "w-8 h-auto";
     botonHamburguesa.appendChild(menu);
     navWrapper.appendChild(botonHamburguesa);
@@ -45,20 +52,24 @@ function generarNav() {
     lista.id = "menu-navegacion";
     navWrapper.appendChild(lista);
 
+    // Selector de idioma (siempre visible, fuera del menú desplegable móvil)
+    navWrapper.appendChild(crearSelectorIdioma());
+
     // Botón cerrar (X) para el menú móvil
     const botonCerrar = document.createElement("button");
     botonCerrar.className = "md:hidden self-end text-3xl mb-4 hover:text-amber-400 transition-colors";
     botonCerrar.innerHTML = "&times;";
+    botonCerrar.setAttribute("aria-label", s("nav.cerrarMenu"));
     lista.appendChild(botonCerrar);
 
     // Elementos del menú con sus archivos correspondientes
     const menuItems = [
-        { texto: "Inicio", archivo: "../index.html" },
-        { texto: "Sobre mi", archivo: "sobre-mi.html" },
-        { texto: "Conocimientos", archivo: "conocimientos.html" },
-        { texto: "Proyectos", archivo: "proyectos.html" },
-        { texto: "Curriculum Vitae", archivo: "curriculum-vitae.html" },
-        { texto: "Contacto", archivo: "contacto.html" }
+        { texto: s("nav.inicio"), archivo: "../index.html" },
+        { texto: s("nav.sobreMi"), archivo: "sobre-mi.html" },
+        { texto: s("nav.conocimientos"), archivo: "conocimientos.html" },
+        { texto: s("nav.proyectos"), archivo: "proyectos.html" },
+        { texto: s("nav.cv"), archivo: "curriculum-vitae.html" },
+        { texto: s("nav.contacto"), archivo: "contacto.html" }
     ];
 
     menuItems.forEach((item, index) => {
@@ -141,74 +152,7 @@ function generarNav() {
 
 generarNav();
 
-import { misDatos } from "../js/datos.js";
-
-function crearFooter() {
-    const footer = document.createElement("footer");
-    footer.className = "py-8 border-t-2 backdrop-blur-md";
-    footer.style.background = "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)";
-
-    const contenedor = document.createElement("div");
-    contenedor.className = "max-w-7xl mx-auto px-6";
-
-    const contenido = document.createElement("div");
-    contenido.className = "flex flex-col md:flex-row justify-between items-center gap-4";
-
-    // Sección izquierda
-    const seccionIzq = document.createElement("div");
-    seccionIzq.className = "text-center md:text-left";
-
-    const nombre = document.createElement("p");
-    nombre.className = "text-teal-800 font-bold text-lg";
-    nombre.style.fontFamily = "'Poppins', sans-serif";
-    nombre.textContent = `${misDatos.datosPersonales.nombre} ${misDatos.datosPersonales.apellidos}`;
-    seccionIzq.appendChild(nombre);
-
-    const copyright = document.createElement("p");
-    copyright.className = "text-gray-600 text-sm mt-1";
-    copyright.textContent = `© ${new Date().getFullYear()} Todos los derechos reservados`;
-    seccionIzq.appendChild(copyright);
-
-    contenido.appendChild(seccionIzq);
-
-    const seccionDer = document.createElement("div");
-    seccionDer.className = "flex gap-4";
-
-    const redes = [
-        { nombre: "LinkedIn", icono: "../img/linkedin.png", tipo: "imagen", url: misDatos.datosPersonales.linkedin },
-        { nombre: "GitHub", icono: "../img/github-logo (1).png", tipo: "imagen", url: misDatos.datosPersonales.github }
-    ];
-
-    redes.forEach(red => {
-        const enlace = document.createElement("a");
-        enlace.href = red.url;
-        enlace.target = "_blank";
-        enlace.rel = "noopener noreferrer";
-        enlace.className = "hover:scale-125 transition-transform duration-300";
-        enlace.title = red.nombre;
-
-        if (red.tipo === "imagen") {
-            const img = document.createElement("img");
-            img.src = red.icono;
-            img.alt = red.nombre;
-            img.className = "w-8 h-8 object-contain";
-            enlace.appendChild(img);
-        } else {
-            enlace.className += " text-2xl";
-            enlace.textContent = red.icono;
-        }
-
-        seccionDer.appendChild(enlace);
-    });
-
-    contenido.appendChild(seccionDer);
-    contenedor.appendChild(contenido);
-    footer.appendChild(contenedor);
-
-    return footer;
-}
-
 // Añadir el footer automáticamente cuando se carga el script
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.appendChild(crearFooter());
+    document.body.appendChild(crearFooter("../"));
 });

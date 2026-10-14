@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#fff7e6"/>
+  <!-- Árbol de dominio -->
+  <path d="M50 36v10M28 56V46h44v10M50 46v10" fill="none" stroke="#143642" stroke-width="4"/>
+  <rect x="40" y="20" width="20" height="16" rx="3" fill="#143642"/>
+  <circle cx="28" cy="64" r="8" fill="#0078D6"/>
+  <circle cx="50" cy="64" r="8" fill="#f59e0b"/>
+  <circle cx="72" cy="64" r="8" fill="#0078D6"/>
+</svg>

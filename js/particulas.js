@@ -1,6 +1,6 @@
 export function crearParticulasGlobales() {
     const particulasContainer = document.createElement("div");
-    particulasContainer.className = "fixed inset-0 pointer-events-none z-0 overflow-hidden";
+    particulasContainer.className = "particulas fixed inset-0 pointer-events-none z-0 overflow-hidden";
 
     for (let i = 0; i < 30; i++) {
         const particula = document.createElement("div");

@@ -35,3 +35,94 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #fbbf24;
 }
+
+/* Impresión / "Guardar como PDF" del currículum */
+@media print {
+    @page {
+        size: A4;
+        margin: 1.2cm;
+    }
+
+    nav,
+    footer,
+    #menu-overlay,
+    .particulas,
+    .no-print,
+    .cv-oculto {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 0 !important;
+        font-size: 11pt;
+    }
+
+    * {
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        transition: none !important;
+    }
+
+    .cv {
+        margin-top: 0 !important;
+    }
+
+    .cv > div {
+        margin-top: 0.75rem !important;
+    }
+
+    /* Las tarjetas miden 1000px en pantalla: en papel ocupan el ancho de la página */
+    .cv > div > div {
+        width: 100% !important;
+        padding: 0.5rem 0 !important;
+        border: none !important;
+    }
+
+    .cv h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    /* Nombre y títulos de sección */
+    .cv h3.text-4xl {
+        font-size: 1.5rem !important;
+        margin-top: 0.75rem !important;
+    }
+
+    .cv-item,
+    .cv-skill {
+        background: none !important;
+        padding: 0.6rem !important;
+        break-inside: avoid;
+    }
+
+    .cv-item {
+        width: calc(50% - 12px) !important;
+    }
+
+    .cv-skill {
+        width: calc(20% - 10px) !important;
+        padding: 0.35rem !important;
+    }
+
+    .cv-grupo,
+    .cv li {
+        break-inside: avoid;
+    }
+
+    /* Al ocultar elementos, los que quedan se alinean a la izquierda */
+    .cv div:has(> .cv-item) {
+        justify-content: flex-start !important;
+    }
+
+    .cv-categoria {
+        font-size: 1rem !important;
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.4rem !important;
+        break-after: avoid;
+    }
+
+    .cv-skill p {
+        margin-bottom: 0 !important;
+    }
+}

@@ -1,5 +1,6 @@
 import { misDatos } from "../js/datos.js";
 import { crearParticulasGlobales } from "./particulas.js";
+import { t, s } from "./i18n.js";
 
 const fuera = document.getElementById("cont");
 
@@ -13,7 +14,7 @@ function proyectos(){
     contenedor.appendChild(titulo);
 
     const conocimiento = document.createElement("span");
-    conocimiento.textContent = "Proyectos";
+    conocimiento.textContent = s("proyectos.titulo");
     conocimiento.style.background = "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)";
     conocimiento.style.backgroundClip = "text";
     conocimiento.style.color = "transparent";
@@ -38,6 +39,7 @@ function proyectos(){
         const imagen = document.createElement("img");
         imagen.src = proyectos.imagen;
         imagen.alt = proyectos.nombre;
+        imagen.loading = "lazy";
         imagen.className = "w-full h-full object-cover";
         link.appendChild(imagen);
         foto.appendChild(link);
@@ -53,13 +55,13 @@ function proyectos(){
         // Técnologías
         const tecno = document.createElement("p");
         tecno.className = "text-lg text-gray-600 font-semibold mb-3 text-center";
-        tecno.textContent = proyectos.tecnologias;
+        tecno.textContent = proyectos.tecnologias.join(" · ");
         tarjeta.appendChild(tecno);
 
         // Descripción
         const descripcion = document.createElement("p");
         descripcion.className = "text-sm text-amber-500 mb-4 text-center";
-        descripcion.textContent = proyectos.descripcion;
+        descripcion.textContent = t(proyectos.descripcion);
         tarjeta.appendChild(descripcion);
 
         // Botones: "Ver demo" / "Ver vídeo" / "Ver código".
@@ -85,9 +87,9 @@ function proyectos(){
             botones.appendChild(boton);
         }
 
-        crearBoton("Ver demo", proyectos.demo, "primario");
-        crearBoton("Ver vídeo", proyectos.video, "secundario");
-        crearBoton("Ver código", proyectos.link, "secundario");
+        crearBoton(s("proyectos.verDemo"), proyectos.demo, "primario");
+        crearBoton(s("proyectos.verVideo"), proyectos.video, "secundario");
+        crearBoton(s("proyectos.verCodigo"), proyectos.link, "secundario");
 
         tarjeta.appendChild(botones);
 

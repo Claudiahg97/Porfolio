@@ -1,5 +1,6 @@
 import { misDatos } from "../js/datos.js";
 import { crearParticulasGlobales } from "./particulas.js";
+import { t, tFecha, s } from "./i18n.js";
 
 
 const fuera = document.getElementById("cont");
@@ -14,7 +15,7 @@ function quienSoy() {
   contenedor.appendChild(titulo);
 
   const pregunta = document.createElement("span");
-  pregunta.textContent = "¿Quién soy?";
+  pregunta.textContent = s("sobreMi.titulo");
   pregunta.style.background = "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)";
   pregunta.style.backgroundClip = "text";
   pregunta.style.color = "transparent";
@@ -48,13 +49,13 @@ function quienSoy() {
   // Email
   const emailP = document.createElement("p");
   emailP.className = "text-lg mb-2 text-gray-700";
-  emailP.innerHTML = `<strong class="text-teal-800">Email:</strong> ${misDatos.datosPersonales.email}`;
+  emailP.innerHTML = `<strong class="text-teal-800">${s("sobreMi.email")}:</strong> ${misDatos.datosPersonales.email}`;
   datos.appendChild(emailP);
 
   // Dirección
   const direccionP = document.createElement("p");
   direccionP.className = "text-lg mb-2 text-gray-700";
-  direccionP.innerHTML = `<strong class="text-teal-800">Dirección:</strong> ${misDatos.datosPersonales.direccion}`;
+  direccionP.innerHTML = `<strong class="text-teal-800">${s("sobreMi.direccion")}:</strong> ${misDatos.datosPersonales.direccion}`;
   datos.appendChild(direccionP);
 
   // GitHub
@@ -76,7 +77,7 @@ function quienSoy() {
   historiaContainer.className = "max-w-6xl mx-auto mt-16 mb-12 px-6 md:px-12 lg:px-24 relative z-10";
 
   const historia = document.createElement("p");
-  historia.textContent = `${misDatos.datosPersonales.historia}`;
+  historia.textContent = t(misDatos.datosPersonales.historia);
   historia.className = "text-lg text-gray-600 text-justify leading-relaxed indent-8 p-8 rounded-lg backdrop-blur-md border border-amber-400/50 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300";
   historia.style.fontFamily = "'Poppins', sans-serif";
   historia.style.whiteSpace = "pre-line";
@@ -96,7 +97,7 @@ function experienciaLaboral() {
   titulo.style.fontFamily = "'Poppins', sans-serif";
 
   const tituloTexto = document.createElement("span");
-  tituloTexto.textContent = "Experiencia Laboral";
+  tituloTexto.textContent = s("sobreMi.experiencia");
   tituloTexto.style.background = "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)";
   tituloTexto.style.backgroundClip = "text";
   tituloTexto.style.color = "transparent";
@@ -126,7 +127,7 @@ function experienciaLaboral() {
     const puesto = document.createElement("h3");
     puesto.className = "text-xl font-bold text-teal-800 mb-2 text-center";
     puesto.style.fontFamily = "'Poppins', sans-serif";
-    puesto.textContent = experiencia.puesto;
+    puesto.textContent = t(experiencia.puesto);
     tarjeta.appendChild(puesto);
 
     // Empresa
@@ -138,13 +139,13 @@ function experienciaLaboral() {
     // Fechas
     const fechas = document.createElement("p");
     fechas.className = "text-sm text-amber-500 mb-4 text-center";
-    fechas.textContent = `${experiencia.fechaInicio} - ${experiencia.fechaFin}`;
+    fechas.textContent = `${tFecha(experiencia.fechaInicio)} - ${tFecha(experiencia.fechaFin)}`;
     tarjeta.appendChild(fechas);
 
     // Descripción
     const descripcion = document.createElement("p");
     descripcion.className = "text-gray-600 text-sm leading-relaxed text-center";
-    descripcion.textContent = experiencia.descripcion;
+    descripcion.textContent = t(experiencia.descripcion);
     tarjeta.appendChild(descripcion);
 
     tarjetasContainer.appendChild(tarjeta);

@@ -1,3 +1,6 @@
+import { s, crearSelectorIdioma } from "./i18n.js";
+import { crearFooter } from "./footer.js";
+
 const padre = document.getElementById("cont");
 
 function generarNav() {
@@ -17,8 +20,10 @@ function generarNav() {
     // Logo
     const logo = document.createElement("a");
     logo.href = "index.html";
+    logo.setAttribute("aria-label", s("nav.logo"));
     const logoImg = document.createElement("img");
     logoImg.src = "img/logo.png";
+    logoImg.alt = "Logo Claudia Hdez";
     logoImg.className = "w-24 h-auto";
     logo.appendChild(logoImg);
     navWrapper.appendChild(logo);
@@ -32,33 +37,39 @@ function generarNav() {
     // Botón hamburguesa (solo visible en móvil)
     const botonHamburguesa = document.createElement("button");
     botonHamburguesa.className = "md:hidden focus:outline-none z-50 relative transition-transform duration-300";
+    botonHamburguesa.setAttribute("aria-label", s("nav.abrirMenu"));
     const menu = document.createElement("img");
     menu.src = "img/menu.png";
+    menu.alt = "";
     menu.className = "w-8 h-auto";
     botonHamburguesa.appendChild(menu);
     navWrapper.appendChild(botonHamburguesa);
 
-    // Lista de navegación
+    // Lista de navegación (el selector de idioma se añade más abajo, tras crear la lista)
     const lista = document.createElement("ul");
     lista.className = "fixed md:static top-0 -right-full md:right-auto w-64 md:w-auto h-screen md:h-auto p-8 md:p-0 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 transition-all duration-300 ease-in-out z-50 shadow-2xl md:shadow-none";
     lista.style.backgroundColor = "#143642";
     lista.id = "menu-navegacion";
     navWrapper.appendChild(lista);
 
+    // Selector de idioma (siempre visible, fuera del menú desplegable móvil)
+    navWrapper.appendChild(crearSelectorIdioma());
+
     // Botón cerrar (X) para el menú móvil
     const botonCerrar = document.createElement("button");
     botonCerrar.className = "md:hidden self-end text-3xl mb-4 hover:text-amber-400 transition-colors";
     botonCerrar.innerHTML = "&times;";
+    botonCerrar.setAttribute("aria-label", s("nav.cerrarMenu"));
     lista.appendChild(botonCerrar);
 
     // Elementos del menú con sus archivos correspondientes
     const menuItems = [
-        { texto: "Inicio", archivo: "index.html" },
-        { texto: "Sobre mi", archivo: "html/sobre-mi.html" },
-        { texto: "Conocimientos", archivo: "html/conocimientos.html" },
-        { texto: "Proyectos", archivo: "html/proyectos.html" },
-        { texto: "Curriculum Vitae", archivo: "html/curriculum-vitae.html" },
-        { texto: "Contacto", archivo: "html/contacto.html" }
+        { texto: s("nav.inicio"), archivo: "index.html" },
+        { texto: s("nav.sobreMi"), archivo: "html/sobre-mi.html" },
+        { texto: s("nav.conocimientos"), archivo: "html/conocimientos.html" },
+        { texto: s("nav.proyectos"), archivo: "html/proyectos.html" },
+        { texto: s("nav.cv"), archivo: "html/curriculum-vitae.html" },
+        { texto: s("nav.contacto"), archivo: "html/contacto.html" }
     ];
 
     menuItems.forEach((item, index) => {
@@ -181,7 +192,7 @@ function inicio() {
     // Badge superior
     const badge = document.createElement("div");
     badge.className = "inline-block px-6 py-2 bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-400 text-sm font-medium mb-8 backdrop-blur-sm";
-    badge.textContent = "✨ Disponible para proyectos";
+    badge.textContent = s("home.badge");
     contenido.appendChild(badge);
 
     // Nombre grande
@@ -223,7 +234,7 @@ function inicio() {
 
     // Subtítulo
     const subtitulo = document.createElement("p");
-    subtitulo.textContent = "Portfolio • Desarrolladora Web • Diseñadora UI/UX";
+    subtitulo.textContent = s("home.subtitulo");
     subtitulo.className = "text-white/60 text-xl md:text-2xl font-light tracking-widest mb-12";
     contenido.appendChild(subtitulo);
 
@@ -232,7 +243,7 @@ function inicio() {
     cta.href = "html/proyectos.html";
     cta.className = "inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-amber-500/50 transform hover:scale-105 transition-all duration-300";
     cta.innerHTML = `
-        Explorar Portfolio
+        ${s("home.cta")}
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
@@ -267,10 +278,10 @@ function crearModalSaludo() {
         </button>
         <div class="text-center">
             <div class="text-6xl mb-4 animate-bounce">👋</div>
-            <h2 class="text-3xl font-bold text-gray-800 mb-2">¡Hola!</h2>
-            <p class="text-gray-600 mb-6">Bienvenido a mi portfolio. Explora mis proyectos y conocimientos.</p>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">${s("modal.saludo")}</h2>
+            <p class="text-gray-600 mb-6">${s("modal.bienvenida")}</p>
             <button class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg transition-colors" onclick="this.closest('.fixed').remove()">
-                ¡Comenzar!
+                ${s("modal.comenzar")}
             </button>
         </div>
     `;
@@ -292,9 +303,16 @@ function crearModalSaludo() {
     });
 }
 
+// El saludo solo se muestra en la primera visita
 window.addEventListener("load", () => {
-    setTimeout(crearModalSaludo, 500);
+    let yaVisto = false;
+    try {
+        yaVisto = localStorage.getItem("portfolio-saludo") === "1";
+        localStorage.setItem("portfolio-saludo", "1");
+    } catch (e) { /* sin localStorage: se muestra siempre */ }
+    if (!yaVisto) setTimeout(crearModalSaludo, 500);
 });
 
 inicio();
 generarNav();
+document.body.appendChild(crearFooter(""));
